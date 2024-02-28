@@ -1,15 +1,11 @@
 import { Header } from "./components/header";
+import { Input } from "./components/input";
 
 export function App() {
   return (
     <>
       <Header />
-      <div>
-        <input type="text" placeholder="Adicione uma nova tarefa" />
-        <button>
-          Criar <span></span>
-        </button>
-      </div>
+      <Input />
     </>
   );
 }
