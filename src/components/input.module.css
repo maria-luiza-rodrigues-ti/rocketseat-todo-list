@@ -6,7 +6,7 @@
 
   margin: -1.688rem auto 0;
   width: 100%;
-  max-width: 756px;
+  max-width: 736px;
   height: 3.375rem;
 }
 
@@ -15,8 +15,8 @@
   flex: 1 0 0;
 
   border-radius: 8px;
-  border: 1px solid var(--Gray-700, #0d0d0d);
-  background: var(--Gray-500, #262626);
+  border: 1px solid var(--gray-700);
+  background: var(--gray-500);
 }
 
 .inputContainer > button {
@@ -27,7 +27,7 @@
 
   padding: 1rem;
   border-radius: 8px;
-  background: var(--Blue-Dark, #1e6f9f);
+  background: var(--blue-dark);
   border: none;
 
   color: var(--gray-100);

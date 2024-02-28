@@ -4,7 +4,7 @@
 
   margin: 4rem auto 1.5rem;
   width: 100%;
-  max-width: 756px;
+  max-width: 736px;
 }
 
 .createdTasks p,
@@ -15,11 +15,11 @@
 }
 
 .createdTasks p {
-  color: var(--Blue, #4ea8de);
+  color: var(-blue);
 }
 
 .finalizedTasks p {
-  color: var(--Purple, #8284fa);
+  color: var(--purple);
 }
 
 .createdTasks span,
@@ -27,9 +27,9 @@
   padding: 2px 0.5rem;
   margin-left: 8px;
 
-  background: var(--gray-400, #333);
+  background: var(--gray-400);
   border-radius: 999px;
-  color: var(--gray-100, #d9d9d9);
+  color: var(--gray-100);
   font-size: 0.75rem;
   font-weight: 700;
 }
