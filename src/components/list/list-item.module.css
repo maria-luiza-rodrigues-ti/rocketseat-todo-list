@@ -1,5 +1,6 @@
 .listItemContainer {
   display: flex;
+  align-items: flex-start;
   gap: 12px;
 
   padding: 1rem;
@@ -14,4 +15,82 @@
 
 .listItemContainer:last-child {
   margin-bottom: 0;
+}
+
+.listItemContainer > label {
+  background: transparent;
+  border: none;
+}
+
+.listItemContainer > label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox {
+  width: 1.15rem;
+  height: 1.15rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100%;
+  transition: all 0.2s;
+}
+
+.checkboxChecked {
+  background: var(--purple-dark);
+  border: 2px solid var(--purple-dark);
+}
+
+.checkboxChecked::hover {
+  border: 2px solid var(--purple);
+  background-color: var(--purple);
+}
+
+.checkboxUnchecked {
+  background: transparent;
+  border: 2px solid var(--blue);
+}
+
+.checkboxUnchecked:hover {
+  background: rgba(30, 111, 159, 0.2);
+}
+
+.title {
+  flex: 1;
+  font-size: 0.75rem;
+  color: var(--gray-100);
+}
+
+.titleCompletedTask {
+  text-decoration: line-through;
+  text-decoration-line: strikethrough;
+}
+
+.listItemContainer > button {
+  padding: 5px 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.listItemContainer > button:hover {
+  background: var(--gray-400);
+}
+
+.listItemContainer > button line,
+.listItemContainer > button path {
+  transition: fill 0.2s;
+}
+
+.listItemContainer > button:hover line,
+.listItemContainer > button:hover path {
+  fill: var(--danger);
 }
