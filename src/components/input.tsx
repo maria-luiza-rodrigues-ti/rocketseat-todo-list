@@ -1,4 +1,4 @@
-import { PlusCircle } from "lucide-react";
+import { PlusCircle } from "@phosphor-icons/react";
 
 import styles from "./input.module.css";
 export function Input() {
