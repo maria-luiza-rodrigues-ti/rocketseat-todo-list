@@ -4,15 +4,13 @@
   align-items: center;
   gap: 8px;
 
-  margin: 0 auto;
+  margin: -1.688rem auto 0;
   width: 100%;
   max-width: 756px;
   height: 3.375rem;
-
-  transform: translateY(-50%);
 }
 
-.inputContainer input {
+.inputContainer > input {
   padding: 1rem;
   flex: 1 0 0;
 
@@ -21,7 +19,7 @@
   background: var(--Gray-500, #262626);
 }
 
-.inputContainer button {
+.inputContainer > button {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,0 +1,36 @@
+.listHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 4rem auto;
+  padding-bottom: 1.5rem;
+  width: 100%;
+  max-width: 756px;
+}
+
+.createdTasks p,
+.finalizedTasks p {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.createdTasks p {
+  color: var(--Blue, #4ea8de);
+}
+
+.finalizedTasks p {
+  color: var(--Purple, #8284fa);
+}
+
+.createdTasks span,
+.finalizedTasks span {
+  padding: 2px 0.5rem;
+  margin-left: 8px;
+
+  background: var(--gray-400, #333);
+  border-radius: 999px;
+  color: var(--gray-100, #d9d9d9);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
