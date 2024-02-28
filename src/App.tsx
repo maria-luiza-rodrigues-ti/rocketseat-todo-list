@@ -1,7 +1,15 @@
+import { Header } from "./components/header";
+
 export function App() {
   return (
     <>
-      <h1>Hello World!</h1>
+      <Header />
+      <div>
+        <input type="text" placeholder="Adicione uma nova tarefa" />
+        <button>
+          Criar <span></span>
+        </button>
+      </div>
     </>
   );
 }
