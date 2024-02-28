@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
 
-  margin: 4rem auto;
-  padding-bottom: 1.5rem;
+  margin: 4rem auto 1.5rem;
   width: 100%;
   max-width: 756px;
 }
