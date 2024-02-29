@@ -29,7 +29,9 @@ export function App() {
       isComplete: false,
     };
 
-    setTasksList((state) => [...state, newTask]);
+    const updatedTasksList: TaskType[] = [...tasksList, newTask];
+
+    setTasksList(updatedTasksList);
   }
 
   function handleToggleTask({ id, value }: { id: string; value: boolean }) {
@@ -39,6 +41,16 @@ export function App() {
       }
 
       return { ...task };
+    });
+
+    updatedTasks.sort((a, b) => {
+      if (a.isComplete && !b.isComplete) {
+        return 1;
+      } else if (!a.isComplete && b.isComplete) {
+        return -1;
+      } else {
+        return 0;
+      }
     });
 
     setTasksList(updatedTasks);
