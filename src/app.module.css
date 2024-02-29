@@ -5,9 +5,16 @@
   gap: 8px;
 
   margin: -1.688rem auto 0;
+  padding: 0 1rem;
   width: 100%;
   max-width: 736px;
   height: 3.375rem;
+}
+
+@media (min-width: 768px) {
+  .inputContainer {
+    padding: 0;
+  }
 }
 
 .inputContainer > button {
@@ -35,4 +42,11 @@
   max-width: 736px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .listContainer {
+    padding: 0;
+  }
 }

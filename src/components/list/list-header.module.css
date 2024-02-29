@@ -2,9 +2,15 @@
   display: flex;
   justify-content: space-between;
 
-  margin: 4rem auto 1.5rem;
+  margin: 3rem auto 1.5rem;
   width: 100%;
   max-width: 736px;
+}
+
+@media (min-width: 768px) {
+  .listHeaderContainer {
+    margin: 4rem auto 1.5rem;
+  }
 }
 
 .createdTasks p,
