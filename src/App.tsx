@@ -13,24 +13,6 @@ import { ListEmpty } from "./components/list/list-empty";
 
 import styles from "./app.module.css";
 
-// const tasks: TaskType[] = [
-//   {
-//     id: uuidv4(),
-//     title: "Estudar Next",
-//     isComplete: false,
-//   },
-//   {
-//     id: uuidv4(),
-//     title: "Estudar Node",
-//     isComplete: false,
-//   },
-//   {
-//     id: uuidv4(),
-//     title: "Estudar Tailwind",
-//     isComplete: false,
-//   },
-// ];
-
 export function App() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
   const [tasksList, setTasksList] = useState<TaskType[]>([]);
@@ -40,7 +22,7 @@ export function App() {
     setNewTaskTitle(event.target.value);
   }
 
-  function handleCreateTask() {
+  function handleCreateNewTask() {
     const newTask: TaskType = {
       id: uuidv4(),
       title: newTaskTitle,
@@ -50,12 +32,32 @@ export function App() {
     setTasksList((state) => [...state, newTask]);
   }
 
+  function handleToggleTask({ id, value }: { id: string; value: boolean }) {
+    const updatedTasks = tasksList.map((task) => {
+      if (task.id === id) {
+        return { ...task, isComplete: value };
+      }
+
+      return { ...task };
+    });
+
+    setTasksList(updatedTasks);
+  }
+
+  function removeTask({ id }: { id: string }) {
+    const taskListWithoutRemovedTask = tasksList.filter((task) => {
+      return task.id !== id;
+    });
+
+    setTasksList(taskListWithoutRemovedTask);
+  }
+
   return (
     <>
       <Header />
       <div className={styles.inputContainer}>
         <Input onChange={handleTaskTitle} value={newTaskTitle} />
-        <button onClick={handleCreateTask}>
+        <button onClick={handleCreateNewTask}>
           Criar <PlusCircle size={16} />
         </button>
       </div>
@@ -65,7 +67,14 @@ export function App() {
         {tasksList.length > 0 ? (
           <>
             {tasksList.map((task) => {
-              return <ListItem task={task} key={task.id} />;
+              return (
+                <ListItem
+                  key={task.id}
+                  task={task}
+                  onToggleTaskStatus={handleToggleTask}
+                  onRemoveTask={removeTask}
+                />
+              );
             })}
           </>
         ) : (
