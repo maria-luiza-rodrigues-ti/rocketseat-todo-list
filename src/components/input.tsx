@@ -1,13 +1,13 @@
-import { PlusCircle } from "@phosphor-icons/react";
-
+import { InputHTMLAttributes } from "react";
 import styles from "./input.module.css";
-export function Input() {
+
+export function Input({ ...props }: InputHTMLAttributes<HTMLInputElement>) {
   return (
-    <div className={styles.inputContainer}>
-      <input type="text" placeholder="Adicione uma nova tarefa" />
-      <button>
-        Criar <PlusCircle size={16} />
-      </button>
-    </div>
+    <input
+      type="text"
+      placeholder="Adicione uma nova tarefa"
+      className={styles.input}
+      {...props}
+    />
   );
 }
