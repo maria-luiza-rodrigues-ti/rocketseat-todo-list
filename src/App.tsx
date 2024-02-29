@@ -52,6 +52,20 @@ export function App() {
     setTasksList(taskListWithoutRemovedTask);
   }
 
+  function createdTasksTag() {
+    return tasksList.length;
+  }
+
+  function completionTasksTag() {
+    const numberOfCompletedTasks = tasksList.reduce((accumulator, task) => {
+      if (task.isComplete) {
+        accumulator += 1;
+      }
+      return accumulator;
+    }, 0);
+    return numberOfCompletedTasks;
+  }
+
   return (
     <>
       <Header />
@@ -63,7 +77,10 @@ export function App() {
       </div>
 
       <div className={styles.listContainer}>
-        <ListHeader />
+        <ListHeader
+          onCreatedTasksTag={createdTasksTag}
+          onCompletionTaksTag={completionTasksTag}
+        />
         {tasksList.length > 0 ? (
           <>
             {tasksList.map((task) => {
