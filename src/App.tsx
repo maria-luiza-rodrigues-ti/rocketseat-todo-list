@@ -15,7 +15,14 @@ import styles from "./app.module.css";
 
 export function App() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
-  const [tasksList, setTasksList] = useState<TaskType[]>([]);
+  const [tasksList, setTasksList] = useState<TaskType[]>(() => {
+    const tasksOnStorage = localStorage.getItem("tasks");
+    if (tasksOnStorage) {
+      return JSON.parse(tasksOnStorage);
+    } else {
+      return [];
+    }
+  });
 
   function handleTaskTitle(event: ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
@@ -32,6 +39,8 @@ export function App() {
     const updatedTasksList: TaskType[] = [...tasksList, newTask];
 
     setTasksList(updatedTasksList);
+
+    localStorage.setItem("tasks", JSON.stringify(updatedTasksList));
   }
 
   function handleToggleTask({ id, value }: { id: string; value: boolean }) {
@@ -62,6 +71,8 @@ export function App() {
     });
 
     setTasksList(taskListWithoutRemovedTask);
+
+    localStorage.setItem("tasks", JSON.stringify(taskListWithoutRemovedTask));
   }
 
   function createdTasksTag() {
@@ -75,6 +86,9 @@ export function App() {
       }
       return accumulator;
     }, 0);
+
+    localStorage.setItem("tasks", JSON.stringify(tasksList));
+
     return numberOfCompletedTasks;
   }
 
