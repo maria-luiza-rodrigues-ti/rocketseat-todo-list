@@ -1,5 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { Toaster, toast } from "sonner";
+import { Fade } from "react-awesome-reveal";
 
 import { TaskType } from "./components/list/list-item";
 
@@ -72,6 +74,8 @@ export function App() {
 
     setTasksList(taskListWithoutRemovedTask);
 
+    toast.error("Task removed!");
+
     localStorage.setItem("tasks", JSON.stringify(taskListWithoutRemovedTask));
   }
 
@@ -111,18 +115,20 @@ export function App() {
           <>
             {tasksList.map((task) => {
               return (
-                <ListItem
-                  key={task.id}
-                  task={task}
-                  onToggleTaskStatus={handleToggleTask}
-                  onRemoveTask={removeTask}
-                />
+                <Fade key={task.id} className={styles.fadeContainer}>
+                  <ListItem
+                    task={task}
+                    onToggleTaskStatus={handleToggleTask}
+                    onRemoveTask={removeTask}
+                  />
+                </Fade>
               );
             })}
           </>
         ) : (
           <ListEmpty />
         )}
+        <Toaster richColors />
       </div>
     </>
   );

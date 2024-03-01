@@ -50,3 +50,11 @@
     padding: 0;
   }
 }
+
+.fadeContainer {
+  margin-bottom: 0.75rem;
+}
+
+.fadeContainer:last-child {
+  margin-bottom: 0;
+}
