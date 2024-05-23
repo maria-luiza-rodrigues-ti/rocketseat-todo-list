@@ -2,12 +2,12 @@ import styles from "./list-header.module.css";
 
 interface ListHeaderProps {
   onCreatedTasksTag: () => number;
-  onCompletionTaksTag: () => number;
+  onCompletionTaskTag: () => number;
 }
 
 export function ListHeader({
   onCreatedTasksTag,
-  onCompletionTaksTag,
+  onCompletionTaskTag: onCompletionTaskTag,
 }: ListHeaderProps) {
   return (
     <div className={styles.listHeaderContainer}>
@@ -20,7 +20,7 @@ export function ListHeader({
         <p>
           Concluídas{" "}
           <span>
-            {onCompletionTaksTag()} de {onCreatedTasksTag()}
+            {onCompletionTaskTag()} de {onCreatedTasksTag()}
           </span>
         </p>
       </aside>

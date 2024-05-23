@@ -1,4 +1,4 @@
-import Clipboard from "../../assets/clipboard.png";
+import Clipboard from "/assets/clipboard.png";
 
 import styles from "./list-empty.module.css";
 export function ListEmpty() {

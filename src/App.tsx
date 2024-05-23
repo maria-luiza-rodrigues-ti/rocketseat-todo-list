@@ -43,6 +43,8 @@ export function App() {
     setTasksList(updatedTasksList);
 
     localStorage.setItem("tasks", JSON.stringify(updatedTasksList));
+
+    setNewTaskTitle("");
   }
 
   function handleToggleTask({ id, value }: { id: string; value: boolean }) {
@@ -109,7 +111,7 @@ export function App() {
       <div className={styles.listContainer}>
         <ListHeader
           onCreatedTasksTag={createdTasksTag}
-          onCompletionTaksTag={completionTasksTag}
+          onCompletionTaskTag={completionTasksTag}
         />
         {tasksList.length > 0 ? (
           <>
